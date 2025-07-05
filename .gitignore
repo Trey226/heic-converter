@@ -1,0 +1,26 @@
+# Dependencies
+# Keep node_modules out of your repository, as they are installed via npm or yarn.
+/node_modules
+
+# Logs
+# Log files can contain sensitive information and are specific to a user's environment.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+# Never commit your environment variables.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+/dist
+/build
+
+# User-specific files
+# These are often created by IDEs and operating systems.
+.DS_Store
+Thumbs.db
