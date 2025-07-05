@@ -12,6 +12,6 @@ To use it,
 
 4. either change the file path to your desired one or place all of your pictures in ./putPicsHere
 
-5. run "local-converter.js"
+5. run "node local-converter.js"
 
 6. enjoy your .jpg pics
