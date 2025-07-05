@@ -1,23 +1,23 @@
 // converts heic to jpg
-// it touches your files
 
 const fs = require('fs').promises;
 const path = require('path');
 const convert = require('heic-jpg-exif');
 
-// --- STUFF TO CHANGE ---
 // folder with your heic files
+// you can change this to any folder on your computer but I included this one
+// so you can just put your heic files in there and run the script
 const FOLDER_PATH = './putPicsHere'; // '.' is this folder
 
 // set to true to delete the original .heic file after converting
-// this is permanent.
+// you shouldn't need to keep the original files as this also converts the EXIF data
 const DELETE_ORIGINAL = false;
 // --- END OF STUFF TO CHANGE ---
 
 
-/**
- * does the thing
- */
+
+//does the thing
+
 async function processFolder() {
   console.log(`Scanning folder: ${path.resolve(FOLDER_PATH)}`);
 
@@ -30,7 +30,7 @@ async function processFolder() {
     return;
   }
 
-  // get all the files
+  // gets all the files
   const files = await fs.readdir(FOLDER_PATH);
 
   if (files.length === 0) {
@@ -43,6 +43,7 @@ async function processFolder() {
   // loop over the files
   for (const file of files) {
     // only care about .heic files
+    // I did this for the project I needed it for
     if (path.extname(file).toLowerCase() !== '.heic') {
       console.log(`- Skipping "${file}" (not a HEIC file).`);
       continue;
@@ -59,7 +60,7 @@ async function processFolder() {
       await convert(heicFilePath, jpgFilePath, 1);
       console.log(`   Success! Saved as "${jpgFileName}"`);
 
-      // delete original if we should
+      // delete original if you enabled it
       if (DELETE_ORIGINAL) {
         await fs.unlink(heicFilePath);
         console.log(`   Deleted original file: "${file}"`);

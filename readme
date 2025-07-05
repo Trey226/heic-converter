@@ -1,0 +1,17 @@
+This is a basic tool that I needed for a project on my website.
+
+It loops over a folder and converts all .HEIC (iphone pics) into .jpg format while keeping metadata intact
+
+To use it,
+
+1. Download the repo
+
+2. open a terminal window in the folder
+
+3. run "npm install"
+
+4. either change the file path to your desired one or place all of your pictures in ./putPicsHere
+
+5. run "local-converter.js"
+
+6. enjoy your .jpg pics
